@@ -1,0 +1,9 @@
+[path_comment]
+enabled = true
+
+[path_comment.formats]
+".rs" = "/* $path$file */"
+
+[path_comment.exclude]
+dirs = ["target"]
+patterns = ["*.test.rs"]
