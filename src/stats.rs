@@ -48,12 +48,17 @@ impl ProcessStats {
 
         // Only print summary if something happened
         if check_mode {
-            if total_needs_update > 0 {
+            if total_needs_update > 0 || total_skipped > 0 {
                 println!();
-                if total_needs_update == 1 {
-                    println!("1 file needs update");
-                } else {
-                    println!("{} files need updates", total_needs_update);
+                if total_needs_update > 0 {
+                    if total_needs_update == 1 {
+                        println!("1 file needs update");
+                    } else {
+                        println!("{} files need updates", total_needs_update);
+                    }
+                }
+                if total_skipped > 0 {
+                    println!("skipped {} files", total_skipped);
                 }
             }
         } else {
@@ -71,11 +76,7 @@ impl ProcessStats {
                 }
 
                 if total_skipped > 0 {
-                    if total_skipped == 1 {
-                        parts.push("1 skipped".to_string());
-                    } else {
-                        parts.push(format!("{} skipped", total_skipped));
-                    }
+                    parts.push(format!("skipped {} files", total_skipped));
                 }
 
                 if total_errors > 0 {

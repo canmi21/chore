@@ -58,14 +58,9 @@ pub fn process_file(
             use chore_cli::scanner::SkipReason;
             match reason {
                 SkipReason::ExcludedByDir(dir) => {
-                    println!("Skipped: {} (excluded by dir: {})", display_path, dir);
                     stats.add_skipped(display_path, format!("excluded by dir: {}", dir));
                 }
                 SkipReason::ExcludedByPattern(pattern) => {
-                    println!(
-                        "Skipped: {} (excluded by pattern: {})",
-                        display_path, pattern
-                    );
                     stats.add_skipped(display_path, format!("excluded by pattern: {}", pattern));
                 }
                 SkipReason::NotUtf8 => {
