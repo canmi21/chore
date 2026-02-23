@@ -5,6 +5,8 @@ edition = "2024"
 license = "MIT"
 authors = ["Canmi(Canmi21) <t@canmi.icu>"]
 repository = "https://github.com/canmi21/seam"
+description = "A path comment fmt"
+categories = ["development-tools"]
 
 [[bin]]
 name = "chore"
