@@ -1,7 +1,10 @@
 [package]
 name = "chore-cli"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
+license = "MIT"
+authors = ["Canmi(Canmi21) <t@canmi.icu>"]
+repository = "https://github.com/canmi21/seam"
 
 [[bin]]
 name = "chore"
